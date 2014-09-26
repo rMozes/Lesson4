@@ -14,6 +14,6 @@
     <item>
         <inset
             android:drawable="@drawable/button_shape"
-            android:insetBottom="5dp" />
+            android:insetBottom="3dp" />
     </item>
 </layer-list>
