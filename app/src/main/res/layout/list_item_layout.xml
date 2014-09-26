@@ -59,7 +59,9 @@
             android:id="@+id/btn_in_list"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/button_shape"/>
+            android:background="@drawable/button_shape_shadow"
+            android:textColor="@drawable/text"
+            android:text="@string/button_detail"/>
 
     </RelativeLayout>
 
