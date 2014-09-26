@@ -38,4 +38,9 @@ public class ThirdLessonActivity extends Activity {
         listView.setAdapter(studentAdapter);
     }
 
+    @Override
+    protected void onPause() {
+        super.onPause();
+        StudentLab.get(this).save();
+    }
 }

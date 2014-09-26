@@ -7,10 +7,22 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
+import org.json.JSONException;
+
+import java.io.IOException;
+
+import test.test.myapplication.supp.Constants;
+import test.test.myapplication.supp.JSONSerializer;
+import test.test.myapplication.supp.StudentLab;
+
 
 public class MyActivity extends Activity {
+
+    public static final String TAG = "MyActivity";
+
     private Button button, button2;
     private int i;
+
     private View.OnClickListener onClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
@@ -61,9 +73,7 @@ public class MyActivity extends Activity {
 
     @Override
     protected void onPause() {
-        Log.v("Test", "onPause");
         super.onPause();
-
     }
 
     @Override

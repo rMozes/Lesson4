@@ -1,5 +1,8 @@
 package test.test.myapplication.supp;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 /**
  * Created by BruSD on 9/23/2014.
  */
@@ -11,7 +14,20 @@ public class Student {
     private int mAge;
     private int mTellNumber;
 
-    public Student() {};
+    public Student(JSONObject jsonObject) throws JSONException {
+        mName = jsonObject.getString(Constants.JSON.JSON_NAME);
+        mSname = jsonObject.getString(Constants.JSON.JSON_SNAME);
+        String email = jsonObject.getString(Constants.JSON.JSON_EMAIL);
+        int age = jsonObject.getInt(Constants.JSON.JSON_AGE);
+        int tell = jsonObject.getInt(Constants.JSON.JSON_TELL);
+        if(email != null) {
+            mEmail = email;
+        } if(age != 0) {
+            mAge = age;
+        } if(tell != 0) {
+            mTellNumber = tell;
+        }
+    }
 
     private Student(String name, String mSname, String mEmail,
                     int mAge, int mTellNumber) {
@@ -25,7 +41,7 @@ public class Student {
     public static class Builder {
         private String name;
         private String sname;
-        private String email;
+        private String email = "";
         private int age;
         private int tell;
 
@@ -52,6 +68,17 @@ public class Student {
         public Student build() {
             return new Student(name, sname, email, age, tell);
         }
+    }
+
+    public JSONObject toJSON() throws JSONException {
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put(Constants.JSON.JSON_NAME, mName);
+        jsonObject.put(Constants.JSON.JSON_SNAME, mSname);
+        jsonObject.put(Constants.JSON.JSON_EMAIL, mEmail);
+        jsonObject.put(Constants.JSON.JSON_AGE, mAge);
+        jsonObject.put(Constants.JSON.JSON_TELL, mTellNumber);
+
+        return jsonObject;
     }
 
     public String getName() {

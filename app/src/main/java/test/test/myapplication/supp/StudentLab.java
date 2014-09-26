@@ -1,7 +1,11 @@
 package test.test.myapplication.supp;
 
 import android.content.Context;
+import android.util.Log;
 
+import org.json.JSONException;
+
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -10,14 +14,21 @@ import java.util.HashMap;
  */
 public class StudentLab {
 
+    public static final String TAG = "StudentLab";
+
     private Context context;
     private ArrayList<HashMap<String, Student>> students;
     private static StudentLab lab;
+    private JSONSerializer serializer;
 
     private StudentLab(Context context) {
         this.context = context;
-        students = new ArrayList<HashMap<String, Student>>();
-        generateStudentList();
+        serializer = new JSONSerializer(context, Constants.JSON.FILENAME);
+        try {
+            students = serializer.load();
+        } catch (Exception e) {
+            generateStudentList();
+        }
     }
 
     public static StudentLab get(Context context) {
@@ -53,5 +64,16 @@ public class StudentLab {
 
     private HashMap<String, Student> generateMap() {
         return new HashMap<String, Student>();
+    }
+
+    public void save(){
+        Log.d(TAG, "save students");
+        try {
+            serializer.serializer(students);
+        } catch (JSONException e) {
+            Log.d(TAG, "JSONException : ", e);
+        } catch (IOException e) {
+            Log.d(TAG, "IOException : ", e);
+        }
     }
 }
