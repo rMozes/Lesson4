@@ -65,7 +65,7 @@ public class JSONSerializer {
         is = new InputStreamReader(in);
         reader = new BufferedReader(is);
 
-        String line;
+        String line = "";
         while ((line = reader.readLine()) != null) {
             builder.append(line);
         }
