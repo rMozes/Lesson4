@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView style="@style/Title"
+        android:text="@string/name"/>
+
+    <View style="@style/Divider"/>
+
+    <EditText style="@style/Indicator"
+        android:id="@+id/name_indicator"/>
+
+    <TextView style="@style/Title"
+        android:text="@string/sname"/>
+
+    <View style="@style/Divider"/>
+
+    <EditText style="@style/Indicator"
+        android:id="@+id/sname_indicator"/>
+
+    <TextView style="@style/Title"
+        android:text="@string/email"/>
+
+    <View style="@style/Divider"/>
+
+    <EditText style="@style/Indicator"
+        android:id="@+id/email_indicator"
+        android:inputType="textEmailAddress"
+        android:hint="@string/hint_email"/>
+
+    <TextView style="@style/Title"
+        android:text="@string/age"/>
+
+    <View style="@style/Divider"/>
+
+    <EditText style="@style/Indicator"
+        android:id="@+id/age_indicator"
+        android:inputType="number"
+        android:hint="@string/hint_age"/>
+
+    <TextView style="@style/Title"
+        android:text="@string/tellnumber"/>
+
+    <View style="@style/Divider"/>
+
+    <EditText style="@style/Indicator"
+        android:id="@+id/tell_indicator"
+        android:inputType="phone"
+        android:hint="@string/hint_tellnumber"/>
+
+</LinearLayout>

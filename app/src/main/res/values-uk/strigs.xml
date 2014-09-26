@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Обучалка</string>
+    <string name="hello_world">Привіт Світ!</string>
+    <string name="action_settings">Настройки</string>
+    <string name="title_activity_my_activity1">Життєві цикли Активити</string>
+    <string name="title_activity_my_activity2">Визначник жестів || намір</string>
+    <string name="Third_lesson_activity_title">Лист || Свої осередки i ресурси</string>
+
+    <string name="button_1_text">Запустити друге Активити </string>
+    <string name="button_2_text">Запуск Активити із третього Уроку</string>
+
+    <string name="item_string_name">Імя:</string>
+    <string name="item_string_second_name">Прізвище:</string>
+    <string name="name">Імя</string>
+    <string name="sname">Прізвище</string>
+    <string name="email">Електронна пошта</string>
+    <string name="age">Вік</string>
+    <string name="tellnumber">Число телефона</string>
+
+    <string name="hint_email">Введіть адрес електронної пошти!</string>
+    <string name="hint_age">Введіть вік!</string>
+    <string name="hint_tellnumber">Введіть число телефона!</string>
+    <string name="student_activity_name">Інформація</string>
+
+</resources>
