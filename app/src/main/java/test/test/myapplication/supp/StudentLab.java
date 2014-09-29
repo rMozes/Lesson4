@@ -27,7 +27,7 @@ public class StudentLab {
         try {
             students = serializer.load();
         } catch (Exception e) {
-            generateStudentList();
+            students = generateStudentList();
         }
     }
 
@@ -43,27 +43,27 @@ public class StudentLab {
         return students;
     }
 
-    private void generateStudentList() {
-        generateStudentsItem("Dmitriy","Bruso", students );
-        generateStudentsItem("Михайло","Тромбола", students );
-        generateStudentsItem("Олександр","Мікуланінець ", students );
-        generateStudentsItem("Іван", "Фельцан ", students);
-        generateStudentsItem("Михайло","Рогач ", students );
-        generateStudentsItem("Александр ","Миченко ", students );
-        generateStudentsItem("Oleh ","Mahobey", students );
-        generateStudentsItem("Диана","Ручкайте ", students );
-        generateStudentsItem("Саша","Курта  ", students );
-        generateStudentsItem("Сергей","Грищук  ", students );
+    private ArrayList<HashMap<String, Student>> generateStudentList() {
+        ArrayList<HashMap<String, Student>> listStudents = new ArrayList<HashMap<String, Student>>();
+
+        generateStudentsItem("Dmitriy","Bruso", listStudents );
+        generateStudentsItem("Михайло","Тромбола", listStudents );
+        generateStudentsItem("Олександр","Мікуланінець ", listStudents );
+        generateStudentsItem("Іван", "Фельцан ", listStudents);
+        generateStudentsItem("Михайло","Рогач ", listStudents );
+        generateStudentsItem("Александр ","Миченко ", listStudents );
+        generateStudentsItem("Oleh ","Mahobey", listStudents );
+        generateStudentsItem("Диана","Ручкайте ", listStudents );
+        generateStudentsItem("Саша","Курта  ", listStudents );
+        generateStudentsItem("Сергей","Грищук  ", listStudents );
+
+        return listStudents;
     }
 
-    private void generateStudentsItem(String name, String sname, ArrayList<HashMap<String, Student>> students) {
-        HashMap<String, Student> item = generateMap();
+    private void generateStudentsItem(String name, String sname, ArrayList<HashMap<String, Student>> listStudents) {
+        HashMap<String, Student> item = new HashMap<String, Student>();
         item.put("student", new Student.Builder(name, sname).build());
-        students.add(item);
-    }
-
-    private HashMap<String, Student> generateMap() {
-        return new HashMap<String, Student>();
+        listStudents.add(item);
     }
 
     public void save(){
