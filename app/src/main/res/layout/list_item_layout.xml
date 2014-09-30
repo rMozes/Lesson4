@@ -26,11 +26,33 @@
     </RelativeLayout>
 
     <RelativeLayout
+        android:id="@+id/third_column"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:padding="4dp">
+
+        <Button
+            android:id="@+id/btn_in_list"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="6dp"
+            android:paddingStart="30dp"
+            android:paddingEnd="30dp"
+            android:typeface="serif"
+            android:background="@drawable/button_shape_shadow"
+            android:textColor="@drawable/text"
+            android:textSize="10dp"
+            android:text="@string/button_detail"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_toEndOf="@id/first_coloumn"
-        android:paddingLeft="20dp"
-        android:paddingStart="4dp"
+        android:layout_toStartOf="@id/third_column"
+        android:layout_marginLeft="40dp"
         android:paddingBottom="4dp"
         android:paddingTop="4dp">
 
@@ -48,21 +70,4 @@
             android:text="super"/>
 
     </RelativeLayout>
-
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:padding="4dp">
-
-        <Button
-            android:id="@+id/btn_in_list"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/button_shape_shadow"
-            android:textColor="@drawable/text"
-            android:text="@string/button_detail"/>
-
-    </RelativeLayout>
-
 </RelativeLayout>

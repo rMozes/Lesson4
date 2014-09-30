@@ -17,7 +17,7 @@
     <string name="email">Электронная почта</string>
     <string name="age">Возраст</string>
     <string name="tellnumber">Число телефона</string>
-
+    <string name="button_detail">Подробно</string>
     <string name="hint_email">Введите адрес электронной почты!</string>
     <string name="hint_age">Введите возраст!</string>
     <string name="hint_tellnumber">Введите число телефона!</string>

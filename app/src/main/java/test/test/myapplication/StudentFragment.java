@@ -91,12 +91,10 @@ public class StudentFragment extends Fragment {
         mAge.addTextChangedListener(new MyWatcher(mAge));
         mTell.addTextChangedListener(new MyWatcher(mTell));
 
-
-
+        String nameClick = arg.getString(StudentAdapter.EXTRA_NAME);
         for(HashMap<String, Student> student : students) {
             String name = student.get("student").getName();
-            String name1 = arg.getString(StudentAdapter.EXTRA_NAME);
-            if (name1.equals(name)) {
+            if (nameClick.equals(name)) {
                 mStudent = student.get("student");
                 break;
             }
@@ -107,10 +105,10 @@ public class StudentFragment extends Fragment {
 
     private class MyWatcher implements TextWatcher {
 
-        private View view;
+        private EditText view;
 
         public MyWatcher(View v) {
-            view = v;
+            view = (EditText) v;
         }
 
         @Override
@@ -121,12 +119,17 @@ public class StudentFragment extends Fragment {
         @Override
         public void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {
             int id = view.getId();
+
             switch (id) {
                 case R.id.name_indicator:
                     mStudent.setName(charSequence.toString());
                     break;
                 case R.id.age_indicator:
-                    mStudent.setAge(Integer.parseInt(charSequence.toString()));
+                    if(charSequence.length() != 0) {
+                        mStudent.setAge(Integer.parseInt(charSequence.toString()));
+                    } else {
+                        mStudent.setAge(0);
+                    }
                     break;
                 case R.id.sname_indicator:
                     mStudent.setSname(charSequence.toString());
@@ -135,7 +138,12 @@ public class StudentFragment extends Fragment {
                     mStudent.setEmail(charSequence.toString());
                     break;
                 case R.id.tell_indicator:
-                    mStudent.setTellNumber(Integer.parseInt(charSequence.toString()));
+                    if(charSequence.length() != 0) {
+                        mStudent.setTellNumber(Integer.parseInt(charSequence.toString()));
+                    } else {
+                        mStudent.setTellNumber(0);
+                    }
+                    break;
             }
         }
 
